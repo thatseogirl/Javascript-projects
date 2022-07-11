@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+nav{
+    background-color:#5d495d;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    min-height: 70px;
+}
+h3{
+    font-size: 30px;
+    color: #fff;
+}
+.list-item{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 40%;
+}
+.list-item li{
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 50px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+    
+}
+
+@media screen and (max-width: 1024px){
+    .list-item{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .list-item{
+       position: absolute;
+       right: 0px;
+       height: 92vh;
+       top: 6vh;
+       background-color: #5d495d;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 50%;
+       transform: translateX(100%);
+       transition: transform 0.5s ease-in;
+       overflow: auto;
+    }
+
+    .list-item li{
+        opacity: 0;
+        position: relative;
+        top: 6vh;
+    }
+
+    .burger{
+        display: block;
+    }
+}
+
+.list-active{
+    transform: translateX(0%);
+}
+
+@keyframes lightFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
